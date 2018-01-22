@@ -1,15 +1,6 @@
 
 require 'date'
 
-class Houses
-
-  def initialize(where, ward, sum, date)
-    @where = where
-    @ward = ward
-    @sum = sum
-    @date = date
-  end
-
  hash = {
    ["Basingstoke and Deane", "Tadley South"]=>
   {:count=>1,
@@ -76,13 +67,15 @@ class Houses
     }
 
 hash.each_pair { |key, value|
-  @where = key[0]
-  @ward = key[1]
-  value.each_pair {|k, v|
-    @sum = value[:average]
-    @date = value[:transactions][0][2]
-  }
-  puts "A house was sold in #{@where}, #{@ward} for #{@sum} on #{@date}"
+  where = key[0]
+  ward = key[1]
+  sum = value[:average]
+  date = value[:transactions][0][2]
+  puts "A house was sold in #{where}, #{ward} for #{sum} on #{date}"
 }
 
-end
+
+
+
+
+  
