@@ -32,17 +32,16 @@ class Bank
   end
 
   def print_balance
-    puts @amount_debit
-    puts @amount_credit
-    puts balance()
+    print "date || credit || debit || balance"
+    puts
+    print "#{@amount_credit[0][1]} || #{@amount_credit[0][0]}|| || #{balance}"
   end
 
 end
 
 
 ben = Bank.new
-ben.credit_account(500, "11/20/2001")
-ben.debit_account(100, "10/9/2001")
-ben.credit_account(500, "11/20/2001")
-ben.debit_account(100, "10/9/2001")
+ben.credit_account(1000, "10/01/2012")
+ben.credit_account(2000, "13/01/2012")
+ben.debit_account(500, "14/01/2001")
 ben.print_balance
