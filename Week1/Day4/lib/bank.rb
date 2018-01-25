@@ -13,28 +13,36 @@
 
 class Bank
   def initialize
-    @amount_debit = 0
-    @amount_credit = 0
+    @amount_debit = []
+    @amount_credit = []
   end
 
-  def credit_account(amount)
-    @amount_credit += amount
+  def credit_account(amount, date)
+    @amount_credit.push([amount, date])
   end
 
-  def debit_account(amount)
-    @amount_debit += amount
+  def debit_account(amount, date)
+    @amount_debit.push([amount, date])
   end
 
   def balance
-    return @amount_credit - @amount_debit
+    for i in 0..@amount_debit.length do
+      return @amount_credit[0][i] - @amount_debit[0][i]
+    end
   end
 
   def print_balance
+    puts @amount_debit
+    puts @amount_credit
     puts balance()
   end
+
 end
 
+
 ben = Bank.new
-ben.credit_account(500)
-ben.debit_account(100)
+ben.credit_account(500, "11/20/2001")
+ben.debit_account(100, "10/9/2001")
+ben.credit_account(500, "11/20/2001")
+ben.debit_account(100, "10/9/2001")
 ben.print_balance
