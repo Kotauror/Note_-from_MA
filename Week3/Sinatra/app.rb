@@ -13,7 +13,9 @@ get '/' do
 end
 
 get '/named-cat' do # the same as in random cat, but with params
-  @name = params[:blah] # we still need to set params to @name, as we use @name in  index.erb file.
+  @name = params[:name] # we still need to set params to @name, as we use @name in  index.erb file.
+  @age = params[:age]
+  @color =params[:color]
   erb(:index)
 end
 # http://localhost:4567/named-cat?blah=James - we set @name to James.
