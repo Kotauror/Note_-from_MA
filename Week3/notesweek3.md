@@ -282,3 +282,41 @@ Thanks to this we can use shotgun using our familiar localhost:4567 instead of
 127.0.0.1:9393.
 
 ##ex. 8 returning html
+
+##ex. 9 views
+
+.erb - extension for view files.
+
+inside app.rb
+```ruby
+get '/cat' do
+  erb(:index)
+end
+```
+it says that on /cat website, load code from index.erb file.
+This file is stored in views directory.
+
+##ex. 10 sinatra erb
+
+erb is very powerful. It is part of the Ruby Standard Library. When passed a regular string, erb will do nothing: in Sinatra, running erb("a string") will simply return "a string".
+
+The power of ERB comes when you include the following symbols: <%= %> somewhere in a string. Any Ruby expression within those 'braces' will be evaluated, and then interpolated into the string.
+
+Here is an example of both situations.
+```plain
+
+# within a Sinatra route
+
+erb "Hi there, Visitor!"
+# => "Hi there, Visitor!"
+
+erb "Hi there, Visitor <%= 2 + 2 %>!"
+# => "Hi there, Visitor 4!"
+```
+If you omit the = on the first of the 'ERB tags', the expression will be evaluated but not interpolated into the string:
+```plain
+# within a Sinatra route
+
+erb "Hi there, Visitor <% 2 + 2 %>!"
+# => "Hi there, Visitor!"
+```
