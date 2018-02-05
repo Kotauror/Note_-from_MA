@@ -53,10 +53,10 @@ class Bank
     print "#{@amount_credit[0]["date"]} || #{@amount_credit[0]["amount"]}|| || #{@amount_credit[0]["balance"]} "
     puts
     # print "#{@amount_credit[1]["date"]} || #{@amount_credit[1]["amount"]}|| ||#{@amount_credit[0]["amount"] + @amount_credit[1]["amount"]} "
-    print "#{@amount_credit[1]["date"]} || #{@amount_credit[1]["amount"]}|| ||  #{@amount_credit[0]["balance"]} "
+    print "#{@amount_credit[1]["date"]} || #{@amount_credit[1]["amount"]}|| ||  #{@amount_credit[1]["balance"]} "
     puts
     # print "#{@amount_debit[0]["date"]} || #{@amount_debit[0]["amount"]}|| || #{@amount_credit[0]["amount"] + @amount_credit[1]["amount"]- @amount_debit[0]["amount"].to_i} "
-    print "#{@amount_debit[0]["date"]} || #{@amount_debit[0]["amount"]}|| ||  #{@amount_credit[0]["balance"]}"
+    print "#{@amount_debit[0]["date"]} || #{@amount_debit[0]["amount"]}|| ||  #{@amount_debit[0]["balance"]}"
 
   end
 
