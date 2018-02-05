@@ -12,6 +12,19 @@ get '/' do
    "Hello everyone" "blaaaaah"
 end
 
-get '/cat' do
+get '/named-cat' do # the same as in random cat, but with params
+  @name = params[:blah] # we still need to set params to @name, as we use @name in  index.erb file.
   erb(:index)
+end
+# http://localhost:4567/named-cat?blah=James - we set @name to James.
+
+
+get '/random-cat' do
+  @name = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index)
+end
+
+get '/funny-cat' do
+  @name = ["jim", "joe", "jane"].sample
+  erb(:funny_cat)
 end
